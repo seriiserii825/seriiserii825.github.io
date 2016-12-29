@@ -1,0 +1,2 @@
+!function(t){t(".js-dropdown-arrow").on("click",function(a){a.preventDefault();var e=t(this).attr("href");t(e).slideToggle();var n=t(this).attr("data-target");t(n).slideToggle(500)}),t(".js-tab-content:not(:first)").hide(),t(".js-tab").on("click",function(){t(".js-tab").parent().removeClass("active"),t(this).parent().addClass("active"),t(".js-tab-content").hide();var a=t(this).attr("href");t(a).fadeIn()})}(jQuery);
+//# sourceMappingURL=custom.js.map
