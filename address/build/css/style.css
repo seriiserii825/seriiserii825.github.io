@@ -265,15 +265,21 @@ This must be run when you have at least 2 sprites.
 }
 .icon-header-phone {
   background-image: url(../img/sprite.png);
-  background-position: 0px -65px;
+  background-position: -137px 0px;
   width: 37px;
   height: 37px;
 }
 .icon-header-mail {
   background-image: url(../img/sprite.png);
-  background-position: -78px 0px;
+  background-position: 0px -65px;
   width: 49px;
   height: 34px;
+}
+.header-icon-down {
+  background-image: url(../img/sprite.png);
+  background-position: -78px 0px;
+  width: 49px;
+  height: 49px;
 }
 /*bootstrap
 =============================================*/
@@ -1780,14 +1786,14 @@ h2 {
 }
 .main-header .actions .phone {
   background-image: url(../img/sprite.png);
-  background-position: 0px -65px;
+  background-position: -137px 0px;
   width: 37px;
   height: 37px;
   margin-right: 19px;
 }
 .main-header .actions .mail {
   background-image: url(../img/sprite.png);
-  background-position: -78px 0px;
+  background-position: 0px -65px;
   width: 49px;
   height: 34px;
 }
@@ -1840,6 +1846,7 @@ h2 {
 }
 /* first-section*/
 .first-section {
+  position: relative;
   height: 100%;
   background-image: url("../img/body-bg.jpg");
   background-attachment: fixed;
@@ -1874,10 +1881,28 @@ h2 {
 .first-section .logo {
   text-align: center;
 }
+.first-section .logo__img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 272px;
+  height: 182px;
+}
+@media screen and (max-width: 600px) {
+  .first-section .logo__img {
+    width: 180px;
+    height: 120px;
+    margin-bottom: 15px;
+  }
+}
 .first-section .logo__title {
   font-size: 60px;
   line-height: 72px;
   color: #367fb1;
+}
+@media screen and (max-width: 600px) {
+  .first-section .logo__title {
+    font-size: 40px;
+  }
 }
 .first-section .main-slogan {
   text-align: center;
@@ -1892,14 +1917,38 @@ h2 {
   font-size: 36px;
   line-height: 36px;
 }
+@media screen and (max-width: 600px) {
+  .first-section .main-slogan__title {
+    font-size: 24px;
+  }
+}
 .first-section .main-slogan__text {
   font-family: 'dinpromedium';
   font-size: 24px;
   line-height: 24px;
+}
+@media screen and (max-width: 600px) {
+  .first-section .main-slogan__text {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
 }
 .first-section .btn {
   margin-bottom: 10px;
 }
 .first-section .btn:hover {
   background: #3484ba;
+}
+.first-section .icon-down {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  background-image: url(../img/sprite.png);
+  background-position: -78px 0px;
+  width: 49px;
+  height: 49px;
 }
