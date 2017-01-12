@@ -1854,6 +1854,11 @@ h2 {
   background-repeat: no-repeat;
   background-position: center;
 }
+@media screen and (max-width: 600px) {
+  .first-section {
+    min-height: 650px;
+  }
+}
 .first-section__wrap {
   position: relative;
   height: 100%;
