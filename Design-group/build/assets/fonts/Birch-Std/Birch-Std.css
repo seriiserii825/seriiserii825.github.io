@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "BirchStd";
+    src: url("Birch-Std.eot");
+    src: url("Birch-Std.eot?#iefix") format("embedded-opentype"),
+         url("Birch-Std.woff2") format("woff2"),
+         url("Birch-Std.woff") format("woff"),
+         url("Birch-Std.ttf") format("ttf"),
+         url("Birch-Std.svg#BirchStd") format("svg");
+    font-style: normal;
+    font-weight: regular;
+}
