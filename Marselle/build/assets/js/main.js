@@ -1,0 +1,22 @@
+"use strict";
+
+$(function () {
+  /*
+      https://www.jqueryscript.net/animation/Smooth-Mouse-Wheel-Scrolling-Plugin-With-jQuery-easeScroll.html
+      ===========================*/
+  $("html").easeScroll({
+    frameRate: 60,
+    animationTime: 1000,
+    stepSize: 190,
+    pulseAlgorithm: 1,
+    pulseScale: 8,
+    pulseNormalize: 1,
+    accelerationDelta: 20,
+    accelerationMax: 1,
+    keyboardSupport: true,
+    arrowScroll: 50,
+    touchpadSupport: true,
+    fixedBackground: false
+  });
+});
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4uanMiXSwibmFtZXMiOlsiJCIsImVhc2VTY3JvbGwiLCJmcmFtZVJhdGUiLCJhbmltYXRpb25UaW1lIiwic3RlcFNpemUiLCJwdWxzZUFsZ29yaXRobSIsInB1bHNlU2NhbGUiLCJwdWxzZU5vcm1hbGl6ZSIsImFjY2VsZXJhdGlvbkRlbHRhIiwiYWNjZWxlcmF0aW9uTWF4Iiwia2V5Ym9hcmRTdXBwb3J0IiwiYXJyb3dTY3JvbGwiLCJ0b3VjaHBhZFN1cHBvcnQiLCJmaXhlZEJhY2tncm91bmQiXSwibWFwcGluZ3MiOiI7O0FBQUFBLEVBQUUsWUFBWTtBQUNaOzs7QUFHSUEsSUFBRSxNQUFGLEVBQVVDLFVBQVYsQ0FBcUI7QUFDbkJDLGVBQVcsRUFEUTtBQUVuQkMsbUJBQWUsSUFGSTtBQUduQkMsY0FBVSxHQUhTO0FBSW5CQyxvQkFBZ0IsQ0FKRztBQUtuQkMsZ0JBQVksQ0FMTztBQU1uQkMsb0JBQWdCLENBTkc7QUFPbkJDLHVCQUFtQixFQVBBO0FBUW5CQyxxQkFBaUIsQ0FSRTtBQVNuQkMscUJBQWlCLElBVEU7QUFVbkJDLGlCQUFhLEVBVk07QUFXbkJDLHFCQUFpQixJQVhFO0FBWW5CQyxxQkFBaUI7QUFaRSxHQUFyQjtBQWVELENBbkJMIiwiZmlsZSI6Im1haW4uanMiLCJzb3VyY2VzQ29udGVudCI6WyIkKGZ1bmN0aW9uICgpIHtcclxuICAvKlxyXG4gICAgICBodHRwczovL3d3dy5qcXVlcnlzY3JpcHQubmV0L2FuaW1hdGlvbi9TbW9vdGgtTW91c2UtV2hlZWwtU2Nyb2xsaW5nLVBsdWdpbi1XaXRoLWpRdWVyeS1lYXNlU2Nyb2xsLmh0bWxcclxuICAgICAgPT09PT09PT09PT09PT09PT09PT09PT09PT09Ki9cclxuICAgICAgJChcImh0bWxcIikuZWFzZVNjcm9sbCh7XHJcbiAgICAgICAgZnJhbWVSYXRlOiA2MCxcclxuICAgICAgICBhbmltYXRpb25UaW1lOiAxMDAwLFxyXG4gICAgICAgIHN0ZXBTaXplOiAxOTAsXHJcbiAgICAgICAgcHVsc2VBbGdvcml0aG06IDEsXHJcbiAgICAgICAgcHVsc2VTY2FsZTogOCxcclxuICAgICAgICBwdWxzZU5vcm1hbGl6ZTogMSxcclxuICAgICAgICBhY2NlbGVyYXRpb25EZWx0YTogMjAsXHJcbiAgICAgICAgYWNjZWxlcmF0aW9uTWF4OiAxLFxyXG4gICAgICAgIGtleWJvYXJkU3VwcG9ydDogdHJ1ZSxcclxuICAgICAgICBhcnJvd1Njcm9sbDogNTAsXHJcbiAgICAgICAgdG91Y2hwYWRTdXBwb3J0OiB0cnVlLFxyXG4gICAgICAgIGZpeGVkQmFja2dyb3VuZDogZmFsc2VcclxuICAgICAgfSk7XHJcblxyXG4gICAgfSk7Il19
