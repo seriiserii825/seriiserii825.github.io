@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<title>Verta</title>
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+		ymaps.ready(init);
+
+		function init() {
+			var myMap = new ymaps.Map("map", {
+				center: [54.607260, 39.785614],
+				zoom: 16
+			});
+
+			var myPlacemark = new ymaps.Placemark([54.607260, 39.785614], {
+				hintContent: 'Содержимое всплывающей подсказки',
+				balloonContent: 'Содержимое балуна'
+			});
+
+			myMap.geoObjects.add(myPlacemark);
+		}
+	</script>
+</head>
+
+<body>
+	<div class="container-big">
+		<header class="header-main">
+			<div class="header-main__inner">
+				<div class="logo">
+					<div class="logo__img">
+						<a href="index.html">
+                        <img class="logo-big" src="assets/i/logo-middle.png" alt="logo">
+                        <img class="logo-small" src="assets/i/logo-small.png" alt="logo">
+                    </a>
+					</div>
+				</div>
+				<!--logo-->
+				<ul class="main-menu">
+					<li class="main-menu__item"><a href="category.html" class="main-menu__link"><span>Торговое оборудование</span> </a></li>
+					<li class="main-menu__item"><a href="#" class="main-menu__link"><span>Оборудование для аптек</span></a></li>
+					<li class="main-menu__item"><a href="services.html" class="main-menu__link"><span>Производство и сервис</span></a></li>
+					<li class="main-menu__item"><a href="about.html" class="main-menu__link"><span>О компании</span></a></li>
+					<li class="main-menu__item"><a href="contacts.html" class="main-menu__link"><span>Контакты</span></a></li>
+				</ul>
+				<!--main-menu-->
+				<div class="show-menu" id="js-show-menu">
+					<i class="icon icon-i-24show-menu" id="show-menu__show-image"></i>
+					<i class="icon icon-i-10close-menu show-menu__close-image" id="show-menu__close-image"></i>
+				</div>
+				<div class="consultation">
+					<div class="phone">
+						<i class="icon icon-i-21phone"></i>
+						<a class="tel" class="tel" href="tel:+7(4912)77-57-58">+7 (4912) 77-57-58</a>
+					</div>
+					<!-- /.phone -->
+					<button class="btn show-header-popup">Заказать консультацию</button>
+					<!-- /.btn -->
+				</div>
+				<!--consultation-->
+			</div>
+			<!-- header-main__inner -->
+			<div class="main-header__toggle" id="js-main-header-toggle">
+				<ul class="main-menu">
+					<li class="main-menu__item"><a href="#" class="main-menu__link"><span>Торговое оборудование</span> </a></li>
+					<li class="main-menu__item">
+						<a href="category.html" class="main-menu__link">
+                            <span>Торговое оборудование</span>
+                        </a>
+					</li>
+					<li class="main-menu__item">
+						<a href="#" class="main-menu__link">
+                            <span>Оборудование для аптек</span>
+                        </a>
+					</li>
+					<li class="main-menu__item">
+						<a href="services.html" class="main-menu__link">
+                            <span>Производство и сервис</span>
+                        </a>
+					</li>
+					<li class="main-menu__item">
+						<a href="about.html" class="main-menu__link">
+                            <span>О компании</span>
+                        </a>
+					</li>
+					<li class="main-menu__item">
+						<a href="contacts.html" class="main-menu__link">
+                            <span>Контакты</span>
+                        </a>
+					</li>
+				</ul>
+				<!-- /.main-menu-toggle -->
+				<div class="consultation">
+					<div class="phone">
+						<i class="icon icon-i-21phone"></i>
+						<a class="tel" href="tel:+7(4912)77-57-58">+7 (4912) 77-57-58</a>
+					</div>
+					<!-- /.phone -->
+					<button class="btn show-header-popup">Заказать консультацию</button>
+					<!-- /.btn -->
+				</div>
+				<!-- /.consultation -->
+			</div>
+			<!-- /.main-header__toggle -->
+		</header>
+		<main class="main contacts">
+			<section class="page-intro" style="background-image: url('assets/i/contacts/contacts-bg.jpg')">
+				<div class="page-intro__content">
+					<h1 class="page-intro__title">Контакты</h1>
+					<p>
+						<a class="tel" href="tel:+7(4912)77-57-58">+7 (4912) 77-57-58</a>
+						<a class="tel" href="tel:+7 (4912) 21-11-15">+7(4912)21-11-15</a>
+						<br>
+						<a href="mailto:sale@verta62.ru">sale@verta62.ru</a>
+						<br> Пн-пт: 9:00 - 18:00
+					</p>
+					<button class="btn show-header-popup">заказать консультацию бесплатно</button>
+				</div>
+			</section>
+			<div class="container">
+				<div class="breadcrumbs">
+					<a href="index.html">Главная</a> > <span>Контакты</span>
+				</div>
+			</div>
+			<!-- container -->
+			<div class="contacts-wrap">
+				<div class="container">
+					<div class="contacts__content">
+						<div class="contacts__content-item">
+							<div class="map" id="map"> </div>
+						</div>
+						<!-- /.contacts__content-item -->
+						<div class="contacts__content-item">
+							<ul class="contacts__address">
+								<li class="contacts__address-item">
+									<i class="icon"><i class="icon-i-19map"></i></i>
+									<span>390037, Россия, г. Рязань, ул. Зубковой, д. 8А</span>
+								</li>
+								<li class="contacts__address-item">
+									<i class="icon"><i class="icon-i-21phone"></i></i>
+									<span>
+                                                        <a class="tel" href="tel:+7(4912)77-57-58">+7 (4912) 77-57-58</a>
+                                                        <a class="tel" href="tel:+7(4912)21-11-15">+7(4912)21-11-15</a>
+                                                    </span>
+								</li>
+								<li class="contacts__address-item">
+									<i class="icon"><i class="icon-i-18mail"></i></i>
+									<a href="mailto:sale@verta62.ru">sale@verta62.ru</a></li>
+							</ul>
+							<h3>Адрес производства:</h3>
+							<ul class="contacts__address">
+								<li class="contacts__address-item">
+									<i class="icon"><i class="icon-i-19map"></i></i>
+									<span>390037, Россия, г. Рязань, ул. Зубковой, д. 8А</span>
+								</li>
+							</ul>
+							<h3>VERTA в соцсетях:</h3>
+							<div class="socials">
+								<ul class="socials__list">
+									<li class="socials__list-item">
+										<a href="#">
+											<span class="icon icon-facebook"></span>
+										</a>
+									</li>
+									<li class="socials__list-item">
+										<a href="#">
+											<span class="icon icon-twitter"></span>
+										</a>
+									</li>
+									<li class="socials__list-item">
+										<a href="#">
+											<span class="icon icon-vk"><span class="path1"></span><span class="path2"></span></span>
+										</a>
+									</li>
+									<li class="socials__list-item">
+										<a href="#">
+											<span class="icon icon-ok"><span class="path1"></span><span class="path2"></span></span>
+										</a>
+									</li>
+									<li class="socials__list-item">
+										<a href="#">
+											<span class="icon icon-google-plus-1"></span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<button class="btn">Скачать реквизиты</button>
+							<!-- socials -->
+						</div>
+						<!-- /.contacts__content-item -->
+					</div>
+					<!-- /.contacts__content -->
+				</div>
+				<!-- container -->
+			</div>
+			<!-- contacts-wrap -->
+			<section class="our-team">
+				<div class="container">
+					<h2 class="section-title">Наша команда</h2>
+					<!-- /.section-title -->
+					<p class="section-description">
+						Профессиональный коллектив – неотъемлемая часть успешной работы. Высококвалифицированные сотрудники компании имеют большой опыт работы в сфере торгового оборудования.
+					</p>
+					<!-- /.section-description -->
+					<div class="staff">
+						<div class="staff__item">
+							<img src="assets/i/our-team/1.jpg" alt>
+							<div class="staff__content">
+								<h3 class="staff__title">Юлия Пупелина</h3>
+								<!-- /.staff__title -->
+								<p class="staff__description">Руководитель коммерческого отдела</p>
+								<!-- /.staff__description -->
+								<ul class="staff__address">
+									<li class="staff__address-item">
+										<i class="icon"><i class="icon-i-21phone"></i></i>
+										<span>+7 (4912) 77 57 58</span>
+									</li>
+									<!-- /.staff__address-item -->
+									<li class="staff__address-item">
+										<i class="icon"><i class="icon-i-18mail"></i></i>
+										<span><a href="mailto:y.pupelina@verta62.ru">y.pupelina@verta62.ru</a></span>
+									</li>
+									<!-- /.staff__address-item -->
+								</ul>
+								<!-- /.staff__address -->
+							</div>
+							<!-- /.staff__content -->
+						</div>
+						<!-- /.staff__item -->
+						<div class="staff__item">
+							<img src="assets/i/our-team/2.jpg" alt>
+							<div class="staff__content">
+								<h3 class="staff__title">Сергей Рыбин</h3>
+								<!-- /.staff__title -->
+								<p class="staff__description">Специалист по торговому оборудованию</p>
+								<!-- /.staff__description -->
+								<ul class="staff__address">
+									<li class="staff__address-item">
+										<i class="icon"><i class="icon-i-21phone"></i></i>
+										<a class="tel" href="tel:+7(4912)775758">+7 (4912) 77 57 58</a>
+									</li>
+									<!-- /.staff__address-item -->
+									<li class="staff__address-item">
+										<i class="icon"><i class="icon-i-18mail"></i></i>
+										<span><a href="mailto:s.rybinn@verta62.ru">s.rybinn@verta62.ru</a></span>
+									</li>
+									<!-- /.staff__address-item -->
+								</ul>
+								<!-- /.staff__address -->
+							</div>
+							<!-- /.staff__content -->
+						</div>
+						<!-- /.staff__item -->
+						<div class="staff__item">
+							<img src="assets/i/our-team/3.jpg" alt>
+							<div class="staff__content">
+								<h3 class="staff__title">Виктория Севастьян</h3>
+								<!-- /.staff__title -->
+								<p class="staff__description">Специалист по торговому оборудованию</p>
+								<!-- /.staff__description -->
+								<ul class="staff__address">
+									<li class="staff__address-item">
+										<i class="icon"><i class="icon-i-21phone"></i></i>
+										<span>
+                                            <a class="tel" href="tel:+7(4912)775758">+7 (4912) 77 57 58</a>
+                                        </span>
+									</li>
+									<!-- /.staff__address-item -->
+									<li class="staff__address-item">
+										<i class="icon"><i class="icon-i-18mail"></i></i>
+										<span><a href="mailto:v.sevastyan@verta62.ru">v.sevastyan@verta62.ru</a></span>
+									</li>
+									<!-- /.staff__address-item -->
+								</ul>
+								<!-- /.staff__address -->
+							</div>
+							<!-- /.staff__content -->
+						</div>
+						<!-- /.staff__item -->
+						<div class="staff__item">
+							<img src="assets/i/our-team/4.jpg" alt>
+							<div class="staff__content">
+								<h3 class="staff__title">Марутин Андрей</h3>
+								<!-- /.staff__title -->
+								<p class="staff__description">Специалист по торговому оборудованию</p>
+								<!-- /.staff__description -->
+								<ul class="staff__address">
+									<li class="staff__address-item">
+										<i class="icon"><i class="icon-i-21phone"></i></i>
+										<span><a class="tel" href="tel:+7(4912)775758">+7 (4912) 77 57 58</a></span>
+									</li>
+									<!-- /.staff__address-item -->
+									<li class="staff__address-item">
+										<i class="icon"><i class="icon-i-18mail"></i></i>
+										<span><a href="mailto:a.marutin@verta62.ru">a.marutin@verta62.ru</a></span>
+									</li>
+									<!-- /.staff__address-item -->
+								</ul>
+								<!-- /.staff__address -->
+							</div>
+							<!-- /.staff__content -->
+						</div>
+						<!-- /.staff__item -->
+					</div>
+					<!-- /.staff -->
+				</div>
+				<!-- /.container -->
+			</section>
+			<!-- /.our-team -->
+			<section class="big-form-section" style="background-image: url('assets/i/contacts/big-form-bg.jpg')">
+				<div class="container">
+					<h2 class="section-title">Получить консультацию специалиста бесплатно</h2>
+					<form method="post" class="big-form__form">
+						<div class="form-group">
+							<input type="text" name="big-form-name" placeholder="Ваше имя">
+						</div>
+						<div class="form-group form-group-multiple">
+							<input type="text" name="big-form-name" placeholder="Контактный телефон">
+							<input type="text" name="email" placeholder="E-mail">
+						</div>
+						<div class="form-group">
+							<textarea name="big-form-message">Ваше сообщение</textarea>
+						</div>
+						<div class="form-group form-group__agree">
+							<div class="big-form-section__agree">Отправляя заявку, вы соглашаетесь на обработку персональных данных в соответствии с <a href="#">Политикой конфиденциальности</a></div>
+							<button class="btn" type="submit">Отправить заявку</button>
+						</div>
+					</form>
+					<!-- /.section-title -->
+				</div>
+			</section>
+			<!-- /.big-form-section -->
+		</main>
+		<!--footer-->
+		<!--footer-->
+		<footer class="footer-main">
+		    <div class="footer-main__content-wrap">
+		        <div class="container">
+		            <div class="footer-main__content">
+		                <div class="footer-main__item">
+		                    <h4 class="footer-main__title">Торговое оборудование</h4>
+		                    <ul class="footer-main__list">
+		                        <li class="footer-main__list-item">
+		                            <a href="#" class="footer-main__list-link">Продуктовые супермаркеты</a>
+		                        </li>
+		                        <li class="footer-main__list-item">
+		                            <a href="#" class="footer-main__list-link">Островные торговые конструкции</a>
+		                        </li>
+		                        <li class="footer-main__list-item">
+		                            <a href="#" class="footer-main__list-link">Мебель для офиса</a>
+		                        </li>
+		                        <li class="footer-main__list-item">
+		                            <a href="#" class="footer-main__list-link">Кафе и рестораны</a>
+		                        </li>
+		                        <li class="footer-main__list-item">
+		                            <a href="#" class="footer-main__list-link">Магазины одежды и обуви</a>
+		                        </li>
+		                        <li class="footer-main__list-item">
+		                            <a href="#" class="footer-main__list-link">Фитнес-центры</a>
+		                        </li>
+		                        <li class="footer-main__list-item">
+		                            <a href="#" class="footer-main__list-link">Торговое оборудование для АЗС</a>
+		                        </li>
+		                        <li class="footer-main__list-item">
+		                            <a href="#" class="footer-main__list-link">Магазин кондитерских изделий</a>
+		                        </li>
+		                        <li class="footer-main__list-item">
+		                            <a href="#" class="footer-main__list-link">Магазин алкогольной продукции</a>
+		                        </li>
+		                        <li class="footer-main__list-item">
+		                            <a href="#" class="footer-main__list-link">Магазины косметики</a>
+		                        </li>
+		                        <li class="footer-main__list-item">
+		                            <a href="#" class="footer-main__list-link">Магазины игрушек</a>
+		                        </li>
+		                        <li class="footer-main__list-item">
+		                            <a href="#" class="footer-main__list-link">Магазины часов</a>
+		                        </li>
+		                        <li class="footer-main__list-item">
+		                            <a href="#" class="footer-main__list-link">Магазины кофе и чая</a>
+		                        </li>
+		                        <li class="footer-main__list-item">
+		                            <a href="#" class="footer-main__list-link">Книжные магазины</a>
+		                        </li>
+		                        <li class="footer-main__list-item">
+		                            <a href="#" class="footer-main__list-link">Салон красоты</a>
+		                        </li>
+		                    </ul>
+		                </div>
+		                <!-- /.footer-main__item -->
+		                <div class="footer-main__item">
+		                    <h4 class="footer-main__title">Оборудование для аптек</h4>
+		                    <ul class="footer-main__list">
+		                        <li class="footer-main__list-item"><a href="#" class="footer-main__list-link">Оборудование для аптек с открытой выкладкой</a></li>
+		                        <li class="footer-main__list-item"><a href="#" class="footer-main__list-link">Оборудование для салонов ортопедии</a></li>
+		                        <li class="footer-main__list-item"><a href="#" class="footer-main__list-link">Рецептурные шкафы и системы хранения LekaTeka</a></li>
+		                        <li class="footer-main__list-item"><a href="#" class="footer-main__list-link">Оборудование для аптек с закрытой выкладкой</a></li>
+		                        <li class="footer-main__list-item"><a href="#" class="footer-main__list-link">Оборудование для оптик</a></li>
+		                    </ul>
+		                </div>
+		                <!-- /.footer-main__item -->
+		                <div class="footer-main__item">
+		                    <h4 class="footer-main__title">Производство и сервис</h4>
+		                    <ul class="footer-main__menu">
+		                        <li class="footer-main__menu-item"><a href="#" class="footer-main__menu-link">Дилерам</a></li>
+		                        <li class="footer-main__menu-item"><a href="#" class="footer-main__menu-link">Контакты</a></li>
+		                        <li class="footer-main__menu-item"><a href="#" class="footer-main__menu-link">FAQ</a></li>
+		                        <li class="footer-main__menu-item"><a href="#" class="footer-main__menu-link">Статьи</a></li>
+		                        <li class="footer-main__menu-item"><a href="#" class="footer-main__menu-link">О компании</a></li>
+		                    </ul>
+		                </div>
+		                <!-- /.footer-main__item -->
+		                <div class="footer-main__item">
+		                    <h4 class="footer-main__title">Россия, г. Рязань, ул. Зубковой, д. 8А</h4>
+		                    <ul class="address">
+		                        <li class="address__item">
+		                            <div class="icon">
+		                                <i class="icon-i-16footer-phone"></i>
+		                            </div>
+		                            <div class="content">
+		                                <a href="tel:+7(4912)77-57-58">+7 (4912) 77-57-58</a>
+		                                <a href="tel:+7 (4912) 21-11-15">+7 (4912) 21-11-15</a>
+		                            </div>
+		                        </li>
+		                        <li class="address__item">
+		                            <div class="icon">
+		                                <i class="icon-i-15footer-mail"></i>
+		                            </div>
+		                            <div class="content">
+		                                <span>sales@verta62.ru</span>
+		                            </div>
+		                        </li>
+		                    </ul>
+		                    <div class="socials">
+		                        <span>VERTA в соцсетях:</span>
+		                        <ul class="socials__list">
+		                            <li class="socials__list-item">
+		                                <a href="#">
+		                                    <span class="icon icon-facebook"></span>
+		                                </a>
+		                            </li>
+		                            <li class="socials__list-item">
+		                                <a href="#">
+		                                    <span class="icon icon-twitter"></span>
+		                                </a>
+		                            </li>
+		                            <li class="socials__list-item">
+		                                <a href="#">
+		                                    <span class="icon icon-vk"><span class="path1"></span><span class="path2"></span></span>
+		                                </a>
+		                            </li>
+		                            <li class="socials__list-item">
+		                                <a href="#">
+		                                    <span class="icon icon-ok"><span class="path1"></span><span class="path2"></span></span>
+		                                </a>
+		                            </li>
+		                            <li class="socials__list-item">
+		                                <a href="#">
+		                                    <span class="icon icon-google-plus-1"></span>
+		                                </a>
+		                            </li>
+		                        </ul>
+		                    </div>
+		                    <div class="map">
+		                        <img src="assets/i/footer/map.jpg" alt="">
+		                    </div>
+		                </div>
+		                <!-- /.footer-main__item -->
+		            </div>
+		        </div>
+		    </div>
+		    <!-- /.footer-main__content -->
+		    <div class="footer-main__bottom">
+		        <div class="container">
+		            <div class="footer-main__bottom-content">
+		                <div class="copy footer-main__bottom-content-item">&copy; 2018 VERTA</div>
+		                <a class="copy footer-main__bottom-content-item" href="#">Политика конфиденциальности</a>
+		                <a class="copy footer-main__bottom-content-item" href="#">Разработка сайта —  Динамика</a>
+		            </div>
+		        </div>
+		    </div>
+		    <!-- /.footer-main__bottom -->
+		</footer>
+		<div class="overlay" id="js-overlay"></div>
+			<div class="header-popup" id="js-header-popup">
+				<button class="close-header-popup">
+		            <i class="icon-i-9close-gallery-modal"></i>
+		        </button>
+				<h3 class="header-popup__title">Заказать консультацию</h3>
+				<form metohd="post" class="header-popup__form">
+					<input type="text" name="header_popup_name" placeholder="Ваше имя">
+					<input type="text" name="header_popup_phone" placeholder="Контактный телефон">
+					<input type="email" name="header_popup_email" placeholder="E-mail">
+					<input class="btn" name="header_popup_submit" type="submit" value="отправить">
+					<div class="agree">Отправляя заявку, вы соглашаетесь на обработку персональных данных в соответствии с
+						<a href="#">Политикой конфиденциальности</a>
+					</div>
+				</form>
+		
+				<div class="thanks">
+					<p>Заявка отправлена, спасибо за обращение!</p>
+				</div>
+			</div>
+		</div>
+		<!--[if lt IE 9]>
+		    <script src="assets/libs/html5shiv/es5-shim.min.js"></script>
+		    <script src="assets/libs/html5shiv/html5shiv.min.js"></script>
+		    <script src="assets/libs/html5shiv/html5shiv-printshiv.min.js"></script>
+		    <script src="assets/libs/html5shiv/respond.min.js"></script>
+		    [endif]-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="assets/libs/jquery-migrate/jquery-migrate.min.js"></script>
+		<script src="assets/libs/jquery-validation/dist/jquery.validate.min.js"></script>
+		<script src="assets/libs/slick/slick.min.js"></script>
+		<script src="assets/js/main.js"></script>
+		</body>
+		
+		</html>
